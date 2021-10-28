@@ -8,7 +8,6 @@ export const loading=()=>{
     }
 }
 export const sucess=(data,other)=>{
-   alert("sucess")
 let orgdata=''
 if(other==="latest")
 {
@@ -35,8 +34,8 @@ export const returnToLobby=()=>{
     }
 }
 export const fetchDataByName=(name)=>{
-    console.log(name)
     return(async (dispatch)=>{
+        console.log(name)
         await dispatch(loading())
              await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
              .then(async res=>await res.json())
@@ -47,11 +46,12 @@ export const fetchDataByName=(name)=>{
              })
             })
 }
-export const sortByLetter=(letter)=>{
-    console.log(letter)
+export const sortByLetter=(l)=>{
+    console.log("veera",l)
     return(async (dispatch)=>{
+        console.log("veera1",l)
         await dispatch(loading())
-             await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+             await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${l}`)
              .then(async res=>await res.json())
              .then(data=>dispatch(sucess(data.meals)))
              .catch(e=>{
@@ -59,6 +59,7 @@ export const sortByLetter=(letter)=>{
                  return
              })
             })
+        
 }
 export const randomMeal=()=>{
     console.log()

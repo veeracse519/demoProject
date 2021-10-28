@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { connect } from "react-redux";
 import { fetchDataByName, latestMale, randomMeal, returnToLobby, sortByLetter } from "../../redux/actions";
 import "./styles.css"
-const MealDb=({data,fetchDataByName,randomMeal,lobby,latestMeal})=>{
+const MealDb=({data,fetchDataByName,randomMeal,lobby,latestMeal,sortByLetter})=>{
     const[text,setText]=useState('')
     const[text1,sortText]=useState('')
     const handleChange=(e)=>{
